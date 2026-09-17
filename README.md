@@ -15,6 +15,12 @@
 Guía gastronómica visual para viajeros extranjeros en Perú.
 Recorrido central: **Destino → Plato → Restaurante recomendado**.
 
+**En vivo: https://comidaperuana.vercel.app**
+
+Desplegado en Vercel y conectado a este repositorio: cada push a `main`
+despliega solo. `NEXT_PUBLIC_SITE_URL` está configurada en Vercel y es lo que
+alimenta los canonical y las URLs de OpenGraph — sin ella apuntan a localhost.
+
 La identidad del producto vive en `SOUL.md`. El diseño aprobado es
 `diseño inicial MVP.png` (10 pantallas). La especificación funcional completa
 (52 secciones, fases 1-11) **no está en el repo** — ver "Pendientes" abajo.
@@ -32,6 +38,8 @@ Abrir `http://localhost:3005` (redirige a `/en` o `/es` según el navegador).
 
 **Sobre el puerto:** el 3000 lo ocupa otro proyecto (`frisby-control`) y el 3001
 tiene un servidor en IPv6 que provoca choques. Usar 3005.
+
+**`.env.local`** lo genera `vercel link` y está ignorado por git. No lo subas.
 
 **Si cambias o agregas rutas:** correr `npx next typegen` antes de `tsc`, o los
 tipos de ruta generados quedan viejos y el typecheck falla con errores que
