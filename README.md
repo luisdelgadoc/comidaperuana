@@ -17,9 +17,19 @@ Recorrido central: **Destino → Plato → Restaurante recomendado**.
 
 **En vivo: https://comidaperuana.vercel.app**
 
-Desplegado en Vercel y conectado a este repositorio: cada push a `main`
-despliega solo. `NEXT_PUBLIC_SITE_URL` está configurada en Vercel y es lo que
-alimenta los canonical y las URLs de OpenGraph — sin ella apuntan a localhost.
+Desplegado en Vercel. **El despliegue automático desde GitHub NO está
+conectado todavía**: `vercel git connect` falla porque falta autorizar la app
+de Vercel en la cuenta de GitHub, que es un paso de navegador. Mientras tanto
+se publica a mano:
+
+```bash
+npx vercel --prod
+```
+
+`NEXT_PUBLIC_SITE_URL` está configurada en Vercel (production, preview y
+development) y es lo que alimenta los canonical y las URLs de OpenGraph. Sin
+ella apuntan a localhost, que en producción le diría a Google que la versión
+canónica de cada página vive en una máquina de desarrollo.
 
 La identidad del producto vive en `SOUL.md`. El diseño aprobado es
 `diseño inicial MVP.png` (10 pantallas). La especificación funcional completa
