@@ -19,37 +19,20 @@ const BASE = process.argv[2] ?? "https://comidaperuana.vercel.app";
 const ACCEPT_MODERN = "image/avif,image/webp,image/*,*/*";
 const CONCURRENCY = 6;
 
-/** Routes are discovered by crawling the deployed pages, so the script needs
- *  no knowledge of the content and keeps working as the catalogue grows. */
+/** The sitemap is the reliable route list: the district step uses a form
+ *  rather than links, so a plain crawler never reaches the dish feeds. */
 async function routesToVisit() {
-  const roots = ["/es", "/en", "/es/explore", "/es/explore/lima"];
-  const found = new Set(roots);
+  const res = await fetch(`${BASE}/sitemap.xml`);
+  if (!res.ok) throw new Error(`No pude leer el sitemap (${res.status})`);
 
-  for (const root of roots) {
-    const html = await fetchText(root);
-    for (const href of html.matchAll(/href="(\/(?:es|en)\/[^"#]*)"/g)) {
-      found.add(href[1]);
-    }
+  const xml = await res.text();
+  const routes = new Set();
+
+  for (const match of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+    routes.add(new URL(match[1]).pathname);
   }
 
-  // The feed links to every dish; dish pages link to their restaurants.
-  for (const route of [...found]) {
-    if (!route.includes("/explore/")) continue;
-    const html = await fetchText(route);
-    for (const href of html.matchAll(/href="(\/(?:es|en)\/dishes\/[^"#]*)"/g)) {
-      found.add(href[1]);
-    }
-  }
-
-  for (const route of [...found]) {
-    if (!route.includes("/dishes/")) continue;
-    const html = await fetchText(route);
-    for (const href of html.matchAll(/href="(\/(?:es|en)\/places\/[^"#]*)"/g)) {
-      found.add(href[1]);
-    }
-  }
-
-  return [...found];
+  return [...routes];
 }
 
 async function fetchText(path) {
