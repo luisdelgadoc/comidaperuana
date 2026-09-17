@@ -1,5 +1,5 @@
 const en = {
-  brand: "ComidaPeruana",
+  brand: "Laperuvian.food",
   home: {
     tagline: "Discover Peru through its food.",
     subtitle:
@@ -62,18 +62,18 @@ const en = {
   },
   about: {
     title: "A guide built on judgement, not ratings.",
-    body: "ComidaPeruana exists to answer one question well: you are here, what should you eat and where should you try it. We pick a small number of dishes and a small number of places for each one. Google tells you what is popular. We tell you what is worth your time.",
+    body: "Laperuvian.food exists to answer one question well: you are here, what should you eat and where should you try it. We pick a small number of dishes and a small number of places for each one. Google tells you what is popular. We tell you what is worth your time.",
     back: "Back to exploring",
   },
   seo: {
-    siteTitle: "ComidaPeruana — Discover Peru through its food",
+    siteTitle: "Laperuvian.food — Discover Peru through its food",
     siteDescription:
       "A curated guide to what you should eat in Peru and where to try it.",
     dishTitle: "{dish} in Peru: what it is and where to try it",
     placeTitle: "{place}, {district} — why we recommend it",
     destinationTitle: "What to eat in {district}, {city}",
     exploreTitle: "Where are you going?",
-    aboutTitle: "About ComidaPeruana",
+    aboutTitle: "About Laperuvian.food",
   },
   loading: {
     label: "Loading",

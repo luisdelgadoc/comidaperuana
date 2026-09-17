@@ -1,7 +1,7 @@
 import type { Dictionary } from "./en";
 
 const es: Dictionary = {
-  brand: "ComidaPeruana",
+  brand: "Laperuvian.food",
   home: {
     tagline: "Descubre Perú a través de su comida.",
     subtitle:
@@ -64,18 +64,18 @@ const es: Dictionary = {
   },
   about: {
     title: "Una guía hecha con criterio, no con ratings.",
-    body: "ComidaPeruana existe para responder bien una sola pregunta: estás acá, qué deberías comer y dónde probarlo. Elegimos pocos platos y pocos lugares para cada uno. Google te dice qué es popular. Nosotros te decimos qué vale tu tiempo.",
+    body: "Laperuvian.food existe para responder bien una sola pregunta: estás acá, qué deberías comer y dónde probarlo. Elegimos pocos platos y pocos lugares para cada uno. Google te dice qué es popular. Nosotros te decimos qué vale tu tiempo.",
     back: "Volver a explorar",
   },
   seo: {
-    siteTitle: "ComidaPeruana — Descubre Perú a través de su comida",
+    siteTitle: "Laperuvian.food — Descubre Perú a través de su comida",
     siteDescription:
       "Una guía curada de qué deberías comer en Perú y dónde probarlo.",
     dishTitle: "{dish} en Perú: qué es y dónde probarlo",
     placeTitle: "{place}, {district} — por qué lo recomendamos",
     destinationTitle: "Qué comer en {district}, {city}",
     exploreTitle: "¿A qué ciudad vas?",
-    aboutTitle: "Sobre ComidaPeruana",
+    aboutTitle: "Sobre Laperuvian.food",
   },
   loading: {
     label: "Cargando",

@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import { locales, type Locale } from "@/lib/i18n/locales";
 
 /**
- * No domain is registered yet. Canonical and OpenGraph URLs must be absolute,
- * so the origin comes from the environment and falls back to the dev server.
- * Set NEXT_PUBLIC_SITE_URL before the first deploy.
+ * Canonical and OpenGraph URLs must be absolute. The origin comes from the
+ * environment so it follows the deployment: it is set to https://laperuvian.food
+ * in Vercel, and falls back to the dev server locally. Without it, production
+ * would advertise localhost as the canonical home of every page.
  */
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3005";
 
-export const SITE_NAME = "ComidaPeruana";
+export const SITE_NAME = "Laperuvian.food";
 
 /**
  * `path` is the route without the language prefix, e.g. "/dishes/ceviche".

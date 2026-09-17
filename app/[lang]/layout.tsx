@@ -15,7 +15,7 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: "ComidaPeruana",
+  title: "Laperuvian.food",
   description: "Discover Peru through its food.",
 };
 

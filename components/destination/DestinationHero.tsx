@@ -31,15 +31,13 @@ export function DestinationHero({
       />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/45 to-ink/90" />
 
-      <SiteHeader
-        lang={lang}
-        eyebrow={eyebrow}
-        backHref={backHref}
-        tone="light"
-      />
+      <SiteHeader lang={lang} backHref={backHref} tone="light" />
 
       <div className="relative z-10 px-6 pb-10 sm:px-10 sm:pb-14">
         <Reveal>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-ivory/70">
+            {eyebrow}
+          </p>
           <h1 className="max-w-3xl text-balance text-[clamp(2rem,6.5vw,4.25rem)] font-black leading-[1.02] tracking-tight text-ivory">
             {title}
           </h1>

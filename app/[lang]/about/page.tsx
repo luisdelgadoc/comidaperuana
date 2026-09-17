@@ -31,7 +31,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]"> ) {
 
   return (
     <main className="flex min-h-dvh flex-col">
-      <SiteHeader lang={lang} tone="dark" />
+      <SiteHeader lang={lang} tone="dark" showBack={false} />
 
       <div className="flex flex-1 flex-col justify-center px-6 pb-16 sm:px-10">
         <Reveal>

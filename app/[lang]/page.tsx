@@ -6,6 +6,7 @@ import { isLocale } from "@/lib/i18n/locales";
 import { getDictionary } from "./dictionaries";
 import { Button } from "@/components/ui/Button";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { Logo } from "@/components/Logo";
 import { Reveal } from "@/components/Reveal";
 import { images } from "@/data/mock/images";
 
@@ -48,9 +49,7 @@ export default async function SplashPage({ params }: PageProps<"/[lang]">) {
       <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/40 to-ink/85" />
 
       <header className="relative z-10 flex items-center justify-between px-6 py-8 sm:px-10">
-        <span className="text-sm font-semibold tracking-wide text-ivory">
-          {dict.brand}
-        </span>
+        <Logo lang={lang} tone="light" size="hero" />
         <LanguageSwitcher current={lang} tone="light" />
       </header>
 
