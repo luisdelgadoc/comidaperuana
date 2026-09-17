@@ -2,15 +2,19 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { defaultLocale, isLocale, locales } from "@/lib/i18n/locales";
 
-function getPreferredLocale(request: NextRequest) {
-  const header = request.headers.get("accept-language");
-  if (!header) return defaultLocale;
+const LOCALE_COOKIE = "cp-locale";
 
-  const preferred = header
-    .split(",")
-    .map((part) => part.split(";")[0]?.trim().slice(0, 2).toLowerCase());
-
-  return preferred.find(isLocale) ?? defaultLocale;
+/**
+ * Everyone starts in English, including visitors whose browser is set to
+ * Spanish: the product is written for foreign travellers, and the Spanish
+ * version exists for them to switch into, not to be dropped into.
+ *
+ * The one exception is a returning visitor who already chose a language —
+ * sending them back to English every time would ignore an explicit decision.
+ */
+function resolveLocale(request: NextRequest) {
+  const chosen = request.cookies.get(LOCALE_COOKIE)?.value;
+  return chosen && isLocale(chosen) ? chosen : defaultLocale;
 }
 
 export function proxy(request: NextRequest) {
@@ -21,7 +25,7 @@ export function proxy(request: NextRequest) {
 
   if (pathnameHasLocale) return;
 
-  const locale = getPreferredLocale(request);
+  const locale = resolveLocale(request);
   const url = request.nextUrl.clone();
   url.pathname = `/${locale}${pathname === "/" ? "" : pathname}`;
   return NextResponse.redirect(url);
