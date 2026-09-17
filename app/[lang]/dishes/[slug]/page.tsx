@@ -84,7 +84,7 @@ export default async function DishPage({
 
   return (
     <main className="flex min-h-dvh flex-col">
-      <section className="relative flex min-h-[78vh] flex-col justify-between overflow-hidden">
+      <section className="relative flex min-h-[78vh] flex-col justify-between overflow-hidden bg-ink">
         <Image
           src={`${dish.heroImage.url}?w=1920&q=80`}
           alt={dish.heroImage.alt[lang]}

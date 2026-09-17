@@ -36,7 +36,7 @@ export default async function SplashPage({ params }: PageProps<"/[lang]">) {
   const hero = images.dishes.ceviche;
 
   return (
-    <main className="relative flex min-h-dvh flex-col justify-between overflow-hidden">
+    <main className="relative flex min-h-dvh flex-col justify-between overflow-hidden bg-ink">
       <Image
         src={`${hero.url}?w=1920&q=80`}
         alt={hero.alt[lang]}

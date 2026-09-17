@@ -20,7 +20,7 @@ export function DestinationHero({
   backHref: string;
 }) {
   return (
-    <section className="relative flex min-h-[62vh] flex-col justify-between overflow-hidden rounded-b-3xl">
+    <section className="relative flex min-h-[62vh] flex-col justify-between overflow-hidden rounded-b-3xl bg-ink">
       <Image
         src={`${image.url}?w=1920&q=80`}
         alt={image.alt[lang]}

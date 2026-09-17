@@ -43,7 +43,7 @@ export function PlaceHero({
     : null;
 
   return (
-    <section className="relative flex min-h-[64vh] flex-col justify-between overflow-hidden">
+    <section className="relative flex min-h-[64vh] flex-col justify-between overflow-hidden bg-ink">
       {image ? (
         <Image
           src={`${image.url}?w=1920&q=80`}

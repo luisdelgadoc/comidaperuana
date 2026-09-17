@@ -38,7 +38,7 @@ export function DishStoryCard({
     >
       <Link
         href={`/${lang}/dishes/${dish.slug}`}
-        className="group relative flex h-[72vh] w-full items-end overflow-hidden rounded-3xl sm:h-[78vh]"
+        className="group relative flex h-[72vh] w-full items-end overflow-hidden rounded-3xl bg-ink/15 sm:h-[78vh]"
       >
         {/* Taller than the card so the parallax shift never exposes an edge. */}
         <motion.div style={{ y: imageY }} className="absolute -inset-y-[10%] inset-x-0">

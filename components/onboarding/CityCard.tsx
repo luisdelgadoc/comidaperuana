@@ -30,7 +30,7 @@ export function CityCard({
     >
       <Link
         href={href}
-        className="group relative flex h-44 w-full items-end overflow-hidden rounded-2xl sm:h-56"
+        className="group relative flex h-44 w-full items-end overflow-hidden rounded-2xl bg-ink/15 sm:h-56"
       >
         <Image
           src={`${image.url}?w=1200&q=80`}
