@@ -2,7 +2,13 @@ import type { Restaurant } from "@/types/content";
 import { images } from "./images";
 
 /**
- * PLACEHOLDER DATA — do not ship.
+ * ⚠️ FICTIONAL DATA ATTACHED TO REAL BUSINESSES — do not ship, do not cite.
+ *
+ * The restaurant names below are real places in Lima and Cusco. Every rating,
+ * review count and line of editorial text about them was written to exercise
+ * the interface. None of it was researched, verified, or endorsed by anyone.
+ * Treat it as lorem ipsum that happens to be readable.
+ *
  *
  * Restaurant names are real and well known, but every rating, reviewCount and
  * editorial text below was written to exercise the UI, not researched. Before

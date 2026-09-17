@@ -1,5 +1,17 @@
 # ComidaPeruana
 
+> ### ⚠️ Los datos de este repositorio son de prueba, no información real
+>
+> Los **nombres de restaurantes son reales**, pero **todo lo demás sobre ellos
+> es inventado**: ratings, número de reseñas, textos de recomendación y
+> descripciones editoriales fueron redactados para poder desarrollar la
+> interfaz, sin investigación ni verificación de ningún tipo.
+>
+> Lo mismo aplica a los textos de los 18 platos.
+>
+> **No uses nada de este repositorio como información sobre esos negocios.**
+> El contenido verificado llega en la Fase 11.
+
 Guía gastronómica visual para viajeros extranjeros en Perú.
 Recorrido central: **Destino → Plato → Restaurante recomendado**.
 
