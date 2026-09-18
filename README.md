@@ -1,4 +1,4 @@
-# ComidaPeruana
+# Laperuvian.food
 
 > ### ⚠️ Los datos de este repositorio son de prueba, no información real
 >
@@ -15,15 +15,19 @@
 Guía gastronómica visual para viajeros extranjeros en Perú.
 Recorrido central: **Destino → Plato → Restaurante recomendado**.
 
-**En vivo: https://comidaperuana.vercel.app**
+**En vivo: https://laperuvian.food**
 
-Desplegado en Vercel. **El despliegue automático desde GitHub NO está
-conectado todavía**: `vercel git connect` falla porque falta autorizar la app
+Dominio propio con certificado, apuntando por registro A a Vercel. El
+repositorio y el proyecto en Vercel se siguen llamando `comidaperuana`
+internamente; es solo un nombre.
+
+**El despliegue automático desde GitHub NO está conectado todavía**: `vercel git connect` falla porque falta autorizar la app
 de Vercel en la cuenta de GitHub, que es un paso de navegador. Mientras tanto
 se publica a mano:
 
 ```bash
 npx vercel --prod
+npm run prewarm          # imprescindible tras cada despliegue, ver abajo
 ```
 
 `NEXT_PUBLIC_SITE_URL` está configurada en Vercel (production, preview y
@@ -107,6 +111,24 @@ Flujo navegable hoy: splash → ciudad → zona → feed de platos → detalle d
   gratuita de transformaciones. Esa configuración es funcional, no cosmética.
 - Vercel Hobby sirve mientras el proyecto no monetice; su licencia prohíbe uso
   comercial. Evitar APIs propietarias de Vercel para poder migrar barato.
+
+**Fotografías: precalentar siempre.** Cada imagen se transforma una sola vez,
+bajo demanda, y el primero en abrirla paga 2.4 s. Después son 0.4 s. `npm run
+prewarm` recorre el sitemap y calienta todas las variantes por adelantado; son
+las mismas transformaciones que dispararían los visitantes, alrededor del 6% de
+la cuota mensual gratuita. **Si despliegas y no lo corres, la primera visita de
+cada plato se siente rota.**
+
+**Arranque en inglés.** El producto está escrito para viajeros extranjeros, así
+que todos entran en `/en` sin importar el idioma del navegador. Quien pulsa ES
+queda registrado en la cookie `cp-locale` y vuelve a español en visitas
+siguientes.
+
+**Logo.** `public/brand/`, en rojo para fondos claros y blanco sobre fotografía,
+ambos recortados de la misma alfa. Debajo de `sm` se muestra solo el cuenco: el
+lockup completo tendría que bajar a ~32 px junto al botón de volver y el texto
+deja de leerse. Los PNG pesan 75-115 KB porque el original vino rasterizado —
+si aparece el SVG, reemplazarlos baja eso a unos 5 KB.
 
 **Bilingüe desde el día uno.** Inglés por defecto, español siempre disponible.
 `app/[lang]/` con slugs idénticos en ambos idiomas. Los tipos obligan a que todo
